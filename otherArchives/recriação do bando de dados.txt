@@ -1,0 +1,6 @@
+create database gerenciadorMercado;
+use gerenciadormercado;
+CREATE TABLE funcionarios (idFuncionario VARCHAR(10), nomeFuncionario VARCHAR(255), cargoFuncionario VARCHAR(100), PRIMARY KEY (idFuncionario));
+INSERT INTO funcionarios VALUES ("367582914", "Alice", "Gerente"), ("246381795", "Bob", "Chefe de departamento"), ("859361247", "Carol", "Caixa"), ("725813496", "David", "Operador de empilhadeira"), ("168423975", "Emily", "Açougueira"), ("415297368", "Frank", "Padeiro"), ("926187354", "Graciela", "Caixa"), ("519378624", "Henry", "Encarregado de produtos frescos"), ("483527196", "Iris", "Auxiliar de limpeza"), ("721569348", "Jack", "Estoquista");
+CREATE TABLE produtos (idProduto VARCHAR(4), nomeProduto VARCHAR(255), preco DECIMAL(6,2), qntEmEstoque TINYINT, PRIMARY KEY (idProduto));
+INSERT INTO produtos VALUES ("1234", "Headset", 50.00, 78), ("0493", "Arroz", 23.90, 22), ("2849",  "Tomate", 2.50, 45), ("8410", "Açucar", 12.90, 89), ("7652", "Marshmallows", 12.00, 36), ("1568", "Sal", 5.60, 57), ("0943", "Café", 10.50, 14), ("3689", "Wafer", 5.60, 68), ("2861", "Bolacha Recheada", 4.00, 91), ("4690", "Fardo 10 caixas de leite", 25.00, 30);
