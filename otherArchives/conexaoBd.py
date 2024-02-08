@@ -1,6 +1,7 @@
 from mysql.connector import connect as connectToDb
-class ConnectionClass:
+from os import path, remove
 
+class ConnectionClass:
     connection = connectToDb(
       host="localhost",
       user="root",
@@ -14,6 +15,7 @@ class ConnectionClass:
       foundProduct = self.cursor.fetchone()
       if foundProduct == None: return False
       else:return True
+      
     #if the id has been found, request for all of it's data and return it
     def searchById(self, insertedId):
       if(self.checkIfIdExists(insertedId) == True):
@@ -21,3 +23,8 @@ class ConnectionClass:
         foundProduct = self.cursor.fetchone()
         return foundProduct
       else:return None
+#class for generating the receipt
+class receiptClass:
+   #delete if a previous receipt already exists
+   def deleteIfExists(self):
+      if path.isfile("generatedReceipt.txt") == True: remove("generatedReceipt.txt")
